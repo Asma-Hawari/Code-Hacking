@@ -119,13 +119,37 @@ John Abraham</span>is now following you
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
+                                    @if(Auth::check())
                                     <h5 class="mb-0 text-white nav-user-name">
-Asma Hawari</h5>
+                                        
+{{ Auth::user()->name }}</h5>
+@else
+<h5 class="mb-0 text-white nav-user-name">no user</h5>
+@endif
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+
+                               
+@guest
+                                <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-power-off mr-2"></i>Login</a>
+
+                                 @if (Route::has('register'))
+                            <a class="dropdown-item" href="{{ route('register') }}"><i class="fas fa-power-off mr-2"></i>Register</a>
+                          @endif
+
+    @else
+
+                         <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-power-off mr-2"></i>Logout</a>
+
+                         @endguest
+
+
+
+
+
+
                             </div>
                         </li>
                     </ul>
@@ -169,15 +193,25 @@ Asma Hawari</h5>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="cards.html">Lists Posts <span class="badge badge-secondary">New</span></a>
+                    <a class="nav-link" href="{{route('posts.index')}}">Lists Posts <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="general.html">Create a post</a>
+                                            <a class="nav-link" href="{{route('posts.create')}}">Create a post</a>
                                         </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+
+
+                                         <li class="nav-item">
+                                <a class="nav-link" href="{{route('categories.index')}}" ><i class="fa fa-fw fa-rocket"></i>Categories</a>
+                                </li>
+                                 
                                      
-                                    </ul>
-                                </div>
-                            </li>
+                                     
+                              
                            
 
                         </ul>
