@@ -34,37 +34,31 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Owner</th>
-                                                <th>Category</th>
+                                              
                                                 <th>Photo</th>
                                                 
-                                                <th>title</th>
-                                                <th>body</th>
+                                           
                                                 <th>Created</th>
-                                                <th>Update</th>
+                                            
                                                   <th>Action</th>
                                             </tr>
-                                            @if($posts)
-                                            @foreach($posts as $post)
+                                            @if($photos)
+                                            @foreach($photos as $photo)
                                              <tr>
-                                                <td>{{$post->id}}</td>
-                                                <td>{{$post->user->name}}</td>
-                                                <td>{{$post->category->name}}</td>
+                                                <td>{{$photo->id}}</td>
+                                              
 
-        <td><img height = "50" src="{{$post->photo_id ? $post->photo->path:'/images/no-photo.png'}}">
-                            <td>{{$post->title}}</td>
-                            <td>{{$post->body}}</td>
+        <td><img height = "50" src="{{$photo->id ?$photo->path:'/images/no-photo.png'}}">
+                           
                                                
-            <td>{{$post->created_at != null ? $post->created_at->diffForHumans() : 'Null'}}
+            <td>{{$photo->created_at != null ? $photo->created_at->diffForHumans() : 'Null'}}
                                                 </td>
-
-    <td>{{$post->updated_at != null ? $post->updated_at->diffForHumans():'Null'}}</td>
     <td>
-                                            <a href="{{route('posts.edit',$post->id)}}" 
+                                            <a href="{{route('media.edit',$photo->id)}}" 
                                                type="button" class="btn bg-green waves-effect">
                                                 <i class="material-icons">edit</i>
                                             </a>
-                                <button onclick = "deleteProduct({{$post ->id}})" type="button" class="btn btn-danger waves-effect">
+                                <button onclick = "deleteProduct({{$photo ->id}})" type="button" class="btn btn-danger waves-effect">
                                                 <i class="material-icons">delete</i>
                                             </button>
                                         </td>

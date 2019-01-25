@@ -179,9 +179,9 @@ John Abraham</span>is now following you
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{url('/admin/users')}}">List Users </a></li>
+                                            <a class="nav-link" href="{{url('/admin/users')}}">All Users </a></li>
                                              <li class="nav-item">
-                                            <a class="nav-link" href="{{url('/admin/users')}}" ">Create a user </a></li>
+                                            <a class="nav-link" href="{{url('/admin/users/create')}}" ">Create a user </a></li>
                                             
                                         </li>
                                      
@@ -189,11 +189,11 @@ John Abraham</span>is now following you
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Posts</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-clipboard" aria-hidden="true"></i>Posts</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                    <a class="nav-link" href="{{route('posts.index')}}">Lists Posts <span class="badge badge-secondary">New</span></a>
+                    <a class="nav-link" href="{{route('posts.index')}}">All Posts <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('posts.create')}}">Create a post</a>
@@ -202,15 +202,28 @@ John Abraham</span>is now following you
                                     </div>
                                 </li>
 
+                                 
+                                   <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Media</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                    <a class="nav-link" href="{{route('media.index')}}">All Media <span class="badge badge-secondary">New</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('media.upload')}}">Upload Media</a>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </li>      
+                                     
+
 
 
 
                                          <li class="nav-item">
-                                <a class="nav-link" href="{{route('categories.index')}}" ><i class="fa fa-fw fa-rocket"></i>Categories</a>
+                                <a class="nav-link" href="{{route('categories.index')}}" ><i class="fa fa-th-large" aria-hidden="true"></i>Categories</a>
                                 </li>
-                                 
-                                     
-                                     
                               
                            
 

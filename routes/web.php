@@ -26,4 +26,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/admin/users' , 'AdminUsersController');
 Route::resource('/admin/posts' , 'AdminPostsController');
 Route::resource('/admin/categories' , 'AdminCategoriesController');
+Route::resource('/admin/media' , 'AdminMediaController');
+Route::get('/media/upload' , 'AdminMediaController@upload')->name('media.upload');
 

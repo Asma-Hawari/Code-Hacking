@@ -7,6 +7,7 @@ use App\Http\Requests\PostRequest;
 use App\Post;
 use Auth;
 use App\Category;
+use App\Photo;
 
 class AdminPostsController extends Controller
 {
@@ -41,8 +42,9 @@ class AdminPostsController extends Controller
     public function store(PostRequest $request)
     {
 
-         $user_id = 0;
-         $photo_id = 0 ;
+
+         $user_id = 1;
+         $photo_id = 1 ;
         if(Auth::check())
         {
             $user_id = Auth::user()->id;
@@ -62,7 +64,7 @@ class AdminPostsController extends Controller
          }
          // you can create the posts for the specific user using :
          //$user->posts()->create($request->all());
-        $post = Post::create(['user_id'=>$user_id , 'category_id'=>$request->category_id , 'photo_id'=>$photo_id , 'title'=>$request->title , 'body'=>$request->body]);
+        $post = Post::create(['user_id'=>1 , 'category_id'=>$request->category_id , 'photo_id'=>$photo_id , 'title'=>$request->title , 'body'=>$request->body]);
         return redirect ('/admin/posts');
     }
 
